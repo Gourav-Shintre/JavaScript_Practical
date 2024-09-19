@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <ul class="un_list">
+            <li>JavaScript</li>
+        </ul>
+        <ol class="ol_list">
+            <li>gourav</li>
+            <li>anna</li>
+        </ol>
+    </div>
+</body>
+<script>
+    function additem(language){
+        const list=document.createElement('li')
+        list.innerHTML=`${language}`
+        document.querySelector('.un_list').appendChild(list)
+
+    }
+    additem("java")
+
+    function add_ol_list(name){
+        const add_name=document.createElement('li')
+        add_name.innerHTML=`${name}`
+        document.querySelector('.ol_list').appendChild(add_name)
+
+
+    }
+    add_ol_list('boss')
+
+    //to edit second item of list element
+
+    const second_li_item=document.querySelector('li:nth-child(2)')
+    console.log(second_li_item);
+    const new_item=document.createElement('li')
+    new_item.innerText="GoLang"
+    second_li_item.replaceWith(new_item)
+
+    //now edit first element
+    const first_item=document.querySelector('li')
+    console.log(first_item);
+    const new_itemm=document.createElement('li')
+    new_itemm.textContent="TypeScript"
+    first_item.replaceWith(new_itemm)
+
+    // to remove item from list
+    new_item.remove()
+
+</script>
+</html>
